@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 188.121.42.42
--- Generation Time: Oct 26, 2010 at 04:43 AM
+-- Generation Time: Oct 26, 2010 at 05:57 AM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.10
 
@@ -18,6 +18,26 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `qdbphpprj`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `key` varchar(128) NOT NULL COMMENT 'Key name for Setting',
+  `value` varchar(128) NOT NULL COMMENT 'Key value for Setting',
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` VALUES('base_url', 'http://qdb.cj-baker.co.uk/');
+INSERT INTO `settings` VALUES('site_name', 'QDBTestBed');
+INSERT INTO `settings` VALUES('admin_email', 'deadpad@googlemail.com');
 
 -- --------------------------------------------------------
 
