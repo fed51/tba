@@ -7,6 +7,14 @@
         }        
         public function index() {
             echo "<br />(Home) Home::index";
-            $this->load->view("bob");
-        }       
+            $this->load->view("testLayout");
+        }
+
+        public function bob() {
+        	echo "<br />(Home) Home::BOB";
+            $this->load->view("testLayout2");
+            
+            $db = new Database();
+            $db->select(array('uid', 'username'), 'user', 'uid = 2', 5);
+        }
     }
