@@ -1,10 +1,11 @@
 <?php
-    
+	error_reporting(E_ALL);    
+
     // Load our configuration.    
     include('config/config.php');
     
     // Get and run our bootstrapper.
-    include(FOLDER_CLASSES . "/" . BOOTSTRAPPER);
+    include(FOLDER_CLASSES . SLASH . BOOTSTRAPPER);
     
     //$bob = new Database();
     //$bob->select(array('uid', 'username', 'password'), 'bob');
@@ -13,4 +14,3 @@
     
     // Self loading controller depending on the URL.
     boot();
-    
