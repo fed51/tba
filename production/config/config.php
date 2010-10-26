@@ -1,6 +1,6 @@
 <?php
     /**
-     * @name Config
+     * @name Config - Local
      * 
      * This file contains all the configuration information that needs to be
      * globally accessable and will not change.
