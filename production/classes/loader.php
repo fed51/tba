@@ -1,13 +1,8 @@
 <?php
-
-    class Loader {
-        
-        function __construct() {
-            echo "<br />(Loader) Loader::construct)";
-        }
-        
-        public function view($url) {
-            echo "<br />(Loader) Loader::view - Load View: " . $url;
-        }
-        
+    class Loader {      
+        function __construct() {
+            echo "<br />(Loader) Loader::construct)";
+        }       
+        public function view($url) {            Logger::Log("(Loader) Loader::view - Load View: " . $url);            Logger::Log("(Loader) Checking if <strong>$url</strong> exists...");                        $filename = FOLDER_LAYOUT . SLASH . $url . '.php';            Logger::Log("(Loader) Filename: " . $filename);                        if(file_exists($filename)) {            	Logger::Log("(Loader) File exists.");            	include($filename);            } else {            	Logger::Log("(Loader) File doesn't exist. Aborting load.");            }
+        }     
     }
