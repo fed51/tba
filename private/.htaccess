@@ -1,0 +1,5 @@
+authtype basic
+authgroupfile /dev/null
+authuserfile /home/content/31/5509031/htconfig/.htpassword.ghtpassword
+authname "Secure Area"
+require user fed51 system
