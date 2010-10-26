@@ -1,17 +1,17 @@
 <?php
     class Database { 
         private $conn;
-        private $result;       
+        private $result;        private $log = true;        
         function __construct() {           
             $this->conn = mysql_pconnect(DATABASE_HOST, DATABASE_USER, DATABASE_PASS)
                 or die("Connection failure to database");          
             if($this->conn != null) {
-                echo "Connection succeeded.\n";             
+                echo $this->log ? "Connection succeeded.\n" : '';             
                 mysql_select_db(DATABASE_DB, $this->conn) 
                     or die ("Database not found.");
             }
-        }       
-        function select($cols, $from, $where = '' , $limit = '', $returnType = 'array') {
+        }        // TODO: Finish.
+        function select($cols, $from, $where = '' , $limit = -1, $returnType = 'array') {
             $query = 'SELECT ';          
             if(is_array($cols)) {
                 
@@ -37,17 +37,16 @@
             $query .= ' FROM ';
             if(strlen($from) > 0) {
                 $query  .= $from;
-            }          
-            if($this->conn != null) {
-                $this->result = mysql_db_query(DATABASE_DB, $query, $this->conn);
-                echo "Num Rows: " . mysql_num_rows($this->result);
+            } else { return; }          			if(strlen($where) > 0) {            	$query .= ' WHERE ' . $where;            }                        if(is_int($limit) && $limit >= 0) {            	$query .= ' LIMIT ' . $limit;            }            
+            if($this->conn != null) {            	Logger::Log("(DB) Query: " . $query);
+                $this->result = mysql_query($query, $this->conn);
+                Logger::Log("(DB) Num Rows: " . mysql_num_rows($this->result));
             }           
 			if($returnType == 'array') {
                 $this->makeAssoc();
-            }            
+            }                       
             return $this->result;
-        }
-        
+        }    
         private function makeAssoc() {
             $result = array();            
             while ($row = mysql_fetch_assoc($this->result)) {
