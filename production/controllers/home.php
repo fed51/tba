@@ -11,7 +11,8 @@
         }
 
         public function bob() {
-        	echo "<br />(Home) Home::BOB";
+        	//echo "<br />(Home) Home::BOB";
+        	Logger::Log("BOB", 0, "Home");
             $this->load->view("testLayout2");
             
             $db = new Database();
