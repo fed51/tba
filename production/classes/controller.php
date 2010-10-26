@@ -16,13 +16,13 @@
         public static function get_controller_and_method() {
             $urlInfo = array();
             $tmpUrl = str_replace('index.php?', '', Controller::get_url());
-            $tmpUrl = explode('/', $tmpUrl);          
-            if($tmpUrl[0] == 'index.php') { 
+            $tmpUrl = explode('/', $tmpUrl);                      
+            if($tmpUrl[0] == 'index.php' || strlen($tmpUrl[0]) == 0) { 
                 $urlInfo['controller'] = DEFAULT_CONTROLLER;    
             } else {
                 $urlInfo['controller'] = $tmpUrl[0];
             }           
-            if($tmpUrl[1] == null) {
+            if(!array_key_exists(1, $tmpUrl)) {
                 $urlInfo['method'] = "index";
             } else {
                 $urlInfo['method'] = $tmpUrl[1];
