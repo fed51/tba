@@ -13,9 +13,13 @@
         public function bob() {
         	//echo "<br />(Home) Home::BOB";
         	Logger::Log("BOB", 0, "Home");
-            $this->load->view("testLayout2");
+            $this->load->view("folder/bob");
             
             $db = new Database();
             $db->select(array('uid', 'username'), 'user', 'uid = 2', 5);
+        }
+        
+        public function testLayout() {
+        	$this->load->view("folder/main");
         }
     }

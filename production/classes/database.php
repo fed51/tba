@@ -5,8 +5,7 @@
         function __construct() {           
             $this->conn = mysql_pconnect(DATABASE_HOST, DATABASE_USER, DATABASE_PASS)
                 or die("Connection failure to database");          
-            if($this->conn != null) {
-                echo $this->log ? "Connection succeeded.\n" : '';             
+            if($this->conn != null) {                if($this->log) { Logger::Log("Connection Succeeded", -1, "DB"); }             
                 mysql_select_db(DATABASE_DB, $this->conn) 
                     or die ("Database not found.");
             }
