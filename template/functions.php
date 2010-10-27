@@ -4,7 +4,10 @@ function is_firefox()
 {
     if (isset($_SERVER['HTTP_USER_AGENT']) && 
     (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false))
-        return true;
+        /*return true;*/
+		echo("
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"css/ff.css\" />
+		");
     else
         return false;
 }
@@ -13,16 +16,20 @@ function is_safari()
 {
     if (isset($_SERVER['HTTP_USER_AGENT']) && 
     (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false))
-        return true;
+		echo(" 
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"css/webkit.css\" />
+		");
     else
         return false;
 }
 
-function ae_detect_ie()
+function is_ie()
 {
     if (isset($_SERVER['HTTP_USER_AGENT']) && 
     (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false))
-        return true;
+		echo(" 
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"css/ie.css\" />
+		");
     else
         return false;
 }

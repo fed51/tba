@@ -5,3 +5,22 @@ Authors = Charlie Baker, Joe Otero
 
 ** jquery ui 1.8.5 is included - of course we had nothing to do with that
 this needs to be updated badly
+
+
+
+Directory Structure
+
+dlf - 
+private - 
+production - 
+	classes -
+	config - 
+	controllers - 
+	layout - 
+scripts - 
+	database - 
+template -
+	css - 
+	images - 
+	js - 
+	testclasses - 

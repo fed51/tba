@@ -7,21 +7,9 @@
 <link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.5.custom.css">
 
 <?php
-	if (is_firefox()) { 
-echo(" 
-<link rel=stylesheet type=text/css href=css/ff.css />
-");
-}
-if (is_safari()) { 
-echo(" 
-<link rel=stylesheet type=text/css href=css/webkit.css />
-");
-} 
-if (ae_detect_ie()) { 
-echo("
-<link rel=stylesheet type=text/css href=css/ie.css />
-");
-} 
+is_firefox();
+is_safari();
+is_ie();
 ?>
 
 <script src="js/jquery-1.4.3.min.js" type="text/javascript"></script>
