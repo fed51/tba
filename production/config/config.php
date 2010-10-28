@@ -21,5 +21,5 @@
      
      define('BOOTSTRAPPER', 'bootstrapper.php');   
      /** SITE SPECIFIC */
-     define('SITE_NAME', 'Quotes Database');          define('SLASH', '/');
+     define('SITE_NAME', 'Quotes Database');          define('SLASH', '/');          define('LOGGING', false);
 ?>

@@ -3,10 +3,10 @@
         
         function __construct() {
             parent::__construct();
-            echo "<br />(Home) Home::construct";   
+            Logger::Log("Home::construct", -1, "Home");   
         }        
         public function index() {
-            echo "<br />(Home) Home::index";
+            Logger::Log("Home::index", -1, "Home");
             $this->load->view("testLayout");
         }
 

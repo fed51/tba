@@ -4,6 +4,8 @@
 		
 		static function Log($message, $level = -1, $sender = '') {
 			
+			if(!LOGGING) { return; }
+			
 			echo "<br />";
 			
 			switch($level) {
